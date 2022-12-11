@@ -22,6 +22,17 @@ public class ZombieGame {
     System.out.println("\nPress Enter to Continue");
     input.nextLine();
   }
+
+  public static void charDead(String dead[]) {
+    for (int i = 0; i < dead.length; i++){
+
+      if (dead[i] == null) {
+        System.out.println(" ");
+      } else {
+        System.out.println(dead[i]);
+      }
+    }
+  }
   public static void intro() {
 
     System.out.println("=============================================");
@@ -34,6 +45,8 @@ public class ZombieGame {
   public static void firstLevel() {
 
     String selectedDoorItem;
+    String[] dead = new String[2];
+
 
     System.out.println("\nMission 1: It is 4:35 pm the sun is starting " +
     "to set. You and the group you were assigned to are heading back to " +
@@ -90,11 +103,10 @@ public class ZombieGame {
 
     System.out.println("\nYou pick up a dead corpse and sit him up in the " +
     "diver seat with his head on the horn.");
-    System.out.println("\nThe horde seems distracted from the noise " +
+    System.out.println("The horde seems distracted from the noise " +
                         "and are walking towards the truck.");
     System.out.println("\nJosh: Nice! That should keep them distracted.");
 
-    enterToCont();
 
     System.out.println("\nBANG BANG BANG");
     System.out.println("Luke: Joel you in there! It's Luke!");
@@ -131,7 +143,7 @@ public class ZombieGame {
 
       System.out.println("\nFind something to hold the door shut: ");
       System.out.println(" 1 - Wooden Chair");
-      System.out.println(" 2 - Book Shelf");
+      System.out.println(" 2 - TV Stand");
       System.out.println(" 3 - Coat Rack");
       doorItem = input.nextInt();
 
@@ -148,13 +160,120 @@ public class ZombieGame {
                             " Find something else.");
       }
     } while (doorItem != 2);
-    System.out.println("\nAlvin: The book shelf should do.");
-    selectedDoorItem = "book shelf";
+    System.out.println("\nAlvin: The TV stand should do.");
+    selectedDoorItem = "tv stand";
+
+    enterToCont();
 
     System.out.println("\nSarah: The horde of zombies is all around the " +
     "trailer. We need to find a way out!");
     System.out.println("James: We already looked around. Maybe you can find " +
                         "a way out.");
+
+    int roomSelected;
+    do {
+      System.out.println("\nLook around for a way out the trailer: ");
+      System.out.println(" 1 - Check Kitchen ");
+      System.out.println(" 2 - Check Bathroom");
+      System.out.println(" 3 - Check Bedroom");
+      roomSelected = input.nextInt();
+
+      if(roomSelected < 1 || roomSelected > 3){
+        System.out.println("Please enter a valid option");
+        roomSelected = input.nextInt();
+      }
+
+      if(roomSelected == 1) {
+        System.out.println("\nCan't go out through here.");
+
+      } else if (roomSelected == 2) {
+        System.out.println("\nOnly way out is through that small window but " +
+                            "I doubt anyone can fit through there.");
+      }
+
+    } while (roomSelected != 3);
+    System.out.println("\nWe can probably get out through that skylight window "+
+                        "but we need a way to get up there.");
+    System.out.println("Joel: We can probably use that " +
+                        selectedDoorItem + " that is holding the door shut.");
+
+    System.out.println("\nSarah: What!? You'll let the zombies in!");
+    System.out.println("Joel: The " +selectedDoorItem+ " is the only thing " +
+    "in the trailer that can get us up there.");
+    System.out.println("Alvin: Joel is right. I can hold the door while "+
+                        "the rest of you climb out.");
+
+    enterToCont();
+
+    System.out.println("\nAlvin is holding the door shut while the rest of " +
+    "the group is exiting through the skylight window. You and Christa are " +
+    "the only ones left before Alvin can let the door go. Christa is stuck " +
+    "frozen from fear. You need to convince her before you go. ");
+
+    enterToCont();
+
+    System.out.println("Convince Christa to move: ");
+    System.out.println("1 - Leave Her");
+    System.out.println("2 - Hey! Christa we need to leave.");
+    System.out.println("3 - Snap out of it Christa and let's go!");
+    System.out.println("4 - Christa the group is left. They are waiting for " +
+                        "you.");
+    int christaTalk = input.nextInt();
+
+    if(christaTalk < 1 || christaTalk > 4 ) {
+      System.out.println("Please enter a valid option");
+      christaTalk = input.nextInt();
+    }
+
+    if(christaTalk == 1){
+      System.out.println("\nYou decide to leave Christa to the horde.");
+      dead[0] = "Christa";
+      System.out.println("Alvin: Fine we'll go with out her!");
+    } else if(christaTalk == 2 ){
+      System.out.println("\nChrista gets up and climbs up to the skylight");
+    } else if(christaTalk == 3 ){
+      System.out.println("\nChrista gets up in a panic and leaves with the " +
+                          "group");
+    } else {
+      System.out.println("\nChrista gets up and leaves with the group.");
+    }
+
+    System.out.println("\nAlvin: You go first. I'll be behind you.");
+
+    enterToCont();
+
+    System.out.println("\nAs you are climbing the skylight Alvin gets grab by" +
+                        " zombies. Do you save him or leave him to the horde?");
+    System.out.println("1 - Save Alvin");
+    System.out.println("2 - Leave Alvin");
+    int saveOrKillAlvin = input.nextInt();
+
+    if(saveOrKillAlvin < 1 || saveOrKillAlvin > 2) {
+      System.out.println("Please enter a valid option");
+      saveOrKillAlvin = input.nextInt();
+    }
+
+    if(saveOrKillAlvin == 1) {
+      System.out.println("\nYou go back and save Alvin but you took a hit from" +
+                          " a zombie.");
+      health = 100 - 25;
+      displayHealth(health);
+    } else {
+      System.out.println("\nYou decide to leave Alvin to the horde.");
+      dead[1] = "Alvin";
+    }
+
+    System.out.println("\nYou get to the roof with the rest of the group and " +
+    "jump over the fence that separated the trailer park with the rest of " +
+    "the world.");
+
+    System.out.println("\nMission recap: You managed to escape the trailer " +
+                        "park. These are the group members who died: ");
+    charDead(dead);
+
+
+
+
 
 
   }
