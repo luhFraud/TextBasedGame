@@ -8,7 +8,10 @@ public class ZombieGame {
 
     intro();
     firstLevel();
-  }
+    
+    thirdLevel();
+    
+  } // end of main
 
   //This method will display the players health in every mission.
   public static void displayHealth(int health) {
@@ -271,10 +274,147 @@ public class ZombieGame {
                         "park. These are the group members who died: ");
     charDead(dead);
 
+  } // end of firstLevel 
+  
+  public static void thirdLevel() {
+    System.out.println("=============================================");
+    System.out.println("================NEW MISSION================");
+    System.out.println("=============================================");
 
+    System.out.println("\nMission 3: Bad news! The solar panels in your " +
+    "settlement broke and needs a new part, Good news is there's a tech " +
+    "wearhouse nearby. You, Rick, Stacy, and Xavier have been assigned " +
+    "to get the new part.");
 
+    enterToCont();
 
+    System.out.println("\nYou guys arrive at the wearhouse.");
 
+    int health = 100;
+    displayHealth(health);
 
-  }
-}
+    System.out.println("\nYou: Looks like the wearhouse is untouched, the " +
+    "doors aren't barricaded.");
+    System.out.println("Rick: Yea, lets do a parameter check, know our " +
+    "exits in case.");
+    System.out.println("You: Alright, Xavier your with me lets go.");
+    System.out.println("Rick: We'll take west and you guys east. Meet you " +
+    "guys on the other side.");
+
+    enterToCont();
+
+    System.out.println("\nYou and Xavier are walking around and run into a bus"+
+    " full of zombies, there's so many!");
+
+    enterToCont();
+
+    int riskIt;
+    int helpHim;
+
+    System.out.println("\nShould you guys:");
+    System.out.println(" 1 - Risk it and close the bus doors to prevent" +
+    " them from coming out later.");
+    System.out.println(" 2 - Keep going but risk running into them on " +
+    "your way out.");
+    riskIt = input.nextInt();
+
+    if(riskIt < 1 || riskIt > 2) {
+      System.out.println("Please enter a valid option");
+      riskIt = input.nextInt();
+    }
+
+    if(riskIt == 1) {
+      System.out.println("\nYou: Alright we should close the door in case.");
+      System.out.println("Xavier: You go around and bang the back to " +
+      "distract them while I go in to close it");
+      System.out.println("\nTHUMP! THUMP! THUMP You bang on the back window," +
+      " Xavier tries pulling the lever but it won't budge. You: \"Hurry!\" ");
+      System.out.println("Should you go help Xavier? Press 1 to Help -- " +
+      "Press 2 If you think he's got it.");
+      helpHim = input.nextInt();
+
+      if(helpHim == 1){
+        System.out.println("You go help him pull and it closes!");
+      }
+      else {
+        System.out.println("Your right he manages to close the doors");
+        System.out.println("That was a close one. Come on let's go. ");
+      }
+
+    }
+    else {
+      System.out.println("Let's just keep going, we can't risk it, there's " +
+      "too many of them and 2 of us.");
+    }
+
+    System.out.println("\nYou and Xavier check the parameter, kill any " +
+    "roaming zombies. You finally meet with Rick and Stacy.");
+
+    enterToCont();
+
+    System.out.println("\nRick: All clear");
+    System.out.println("Xavier: All clear");
+
+    enterToCont();
+
+    int killThem;
+
+    System.out.println("The front doors opens! 7 Zombies come out " +
+    "looks like one them is a soldier.");
+    System.out.println(" 1 - Shoot the zombies ");
+    System.out.println(" 2 - Save your bullets and stab the zombies");
+    killThem = input.nextInt();
+
+    if(killThem < 1 || killThem > 2){
+      System.out.println("Please enter a valid option");
+      killThem = input.nextInt();
+    }
+
+    if(killThem == 1) {
+
+      System.out.println("\nYou pull out your gun and aim right for the" +
+      " soldier");
+      System.out.println("Xavier yells NOOO! but you still shoot anyways");
+      System.out.println("BOOOOM!!!");
+      System.out.println("\nThe soldier had a grenade on his chest and you " +
+      "hit it.");
+
+      health -= 25;
+      displayHealth(health);
+
+      System.out.println("\nYour thrown on the floor, arm is bleeding" +
+      "Shock, but you see a blurry vision of a herd of zombies coming");
+      System.out.println("Rick: NO! Stacy, she's gone.");
+      System.out.println("Xavier: We Gotta Go!!");
+      System.out.println("Shock you get up, \"I saw another door this way!\" ");
+
+    }
+    else {
+      System.out.println("\nThe zombie soldier makes it's way over to you, " +
+      "the rest of the group starts killing the others");
+      System.out.println("You: I got this one, \'You stab it\' ");
+    }
+
+    enterToCont();
+
+    System.out.println("\nRick: We need to get this part and leave!");
+    System.out.println("You guys enter the building.");
+    System.out.println("You: Me & Rick will cover you Xavier, start looking.");
+    System.out.println("You guys start fighting the zombies that made their " +
+    "way over. It's chaos, Xavier starts ripping boxes apart frantically.");
+    System.out.println("Xavier: I got it! Let's go.");
+
+    enterToCont();
+
+    System.out.println("You guys return home and practicality saved everyone " +
+    "from a hard winter without heat, your polar panels are soon " +
+    "to start working again.");
+
+    if(killThem == 1){
+      System.out.println("Although Stacy didn't make it, we will never forget " +
+      "her");
+    }
+
+  } // end of thirdLevel
+  
+} // end of class
