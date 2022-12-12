@@ -8,7 +8,7 @@ public class ZombieGame {
 
     intro();
     firstLevel();
-    
+    secondLevel();
     thirdLevel();
     
   } // end of main
@@ -275,6 +275,195 @@ public class ZombieGame {
     charDead(dead);
 
   } // end of firstLevel 
+  
+  public static void secondLevel() {
+    System.out.println("=============================================");
+    System.out.println("================NEW MISSION================");
+    System.out.println("=============================================");
+
+    System.out.println("\nMission 2:  Uh oh! you are our of medical supplies." +
+    " You, Lance, Gabriel, and Tory are have been assigned to gather " +
+    " gather some supplies at a near by hospital. ");
+
+    enterToCont();
+
+    int health = 100;
+    displayHealth(health);
+
+    enterToCont();
+
+    System.out.println("\nLance: We have to be careful here, There" +
+                        " could be some roaming around the halls." +
+                        " We have to come up with a plan.");
+    System.out.println("\nGabriel: I know theres gauze and first aid kits" +
+                        " on the second floor. Medicines are on the first.");
+    System.out.println("\n: BANG!");
+    System.out.println("\nTory: What was that?!.");
+    System.out.println("\nYou: Sorry!");
+    System.out.println("\nLance: Be careful any noise can trigger them" +
+                        " to head our way. Best option we have right" +
+                        " now is to split up, Tory you are with me,"+
+                        " you and gabriel head to the second floor.");
+    System.out.println("\nGabriel: Got it let's move.");
+
+    enterToCont();
+
+    System.out.println("\n: You and Gabriel reach the Second floor "+
+                        "to the room with Medical supplies.");
+
+    System.out.println("\nGabriel: Alright we have to get first aid kits"+
+                        " and gauze.");
+    System.out.println("\n: CRASH! ");
+    System.out.println("\nGabriel: Was that you again?");
+    System.out.println("You: um no.");
+    System.out.println("Gabriel: Oh no there coming! Hurry no time to grab" +
+                        "everything choose something quick!");
+
+    enterToCont();
+
+    int supplyChoice;
+    do {
+
+      System.out.println("\nHurry grab and Item. Enter: ");
+      System.out.println(" 1 - Gauze");
+      System.out.println(" 2 - First aid kit");
+      supplyChoice = input.nextInt();
+
+      if(supplyChoice< 1 || supplyChoice >2) {
+        System.out.println("Please enter a valid option");
+        supplyChoice = input.nextInt();
+      }
+      if(supplyChoice == 2) {
+        System.out.println("\nHmmm maybe not that essential");
+        System.out.println("\nTry something else.");
+
+      }
+
+    } while (supplyChoice != 1);
+        System.out.println("\nGabriel: Alright let's move."
+        System.out.println("\n: First aid collected");
+
+
+    enterToCont();
+
+    System.out.println("\n: You meet up with the rest of the team, when suddenly "
+                        " you start hearing noises.");
+    System.out.println("\Lance: It's getting risky we should go now!");
+    System.out.println("\n Zombies are by the entrance and have now spot you"
+                        "and started heading your way"):
+    System.out.println("\nTory: Right behind you, but looks like where we came from"+
+                        " is now blocked. Let's head this way.");
+    System.out.println("\nYou and the group run down the hall and you are led to two"+
+                        " different hallways.");
+    System.out.println:("\nTory: Which way do we go?")
+
+    enterToCont();
+
+
+    int hallwayChoice;
+    do {
+      System.out.println("\nChoose which hallway to continue Enter: ");
+      System.out.println(" 1 - Left");
+      System.out.println(" 2 - Right");
+      hallwayChoice = input.nextInt();
+
+      if(hallwayChoice < 1 || hallwayChoice > 2) {
+        System.out.println("Please enter a valid option");
+        hallwayChoice = input.nextInt();
+      }
+
+      if(hallwayChoice == 1) {
+        System.out.println("\nYou and the team head Left.");
+        System.out.println("\nLance: Its a dead end!");
+        System.out.println("\nTory: Oh no! I hear them coming!" +
+                            "Your trapped and the zombies are coming."+
+                            "You died...Try something else.");
+      }
+
+    } while (hallwayChoice != 2);
+
+    System.out.println("\n You and the team head right.");
+    System.out.println("\nTory: Look over there I see exits ");
+    System.out.println("\nGabriel: Nice! Keep running! ");
+
+    enterToCont();
+    
+    System.out.println("\nYou reach the end of the hallway and you " +
+                       " are now havig to choose between 3 exits");
+    System.out.println("Gabriel: Now which way do we go?");
+    int exitSelected;
+    do {
+      System.out.println("\nChoose an exit: ");
+      System.out.println(" 1 - Right exit ");
+      System.out.println(" 2 - Left exit ");
+      System.out.println(" 3 - Middle exit");
+      exitSelected = input.nextInt();
+
+      if(exitSelected < 1 || exitSelected> 3){
+        System.out.println("Please enter a valid option");
+        exitSelected = input.nextInt();
+      }
+      if(exitSelected == 1) {
+        System.out.println("\nLance: Can't go this way, It's locked.");
+      } else if (exitSelected == 2) {
+        System.out.println("\nTory: It's locked We can't exit here.");
+      }
+    } while (exitSelected!= 3);
+    System.out.println("\nLook we can pull it open from this side.");
+    System.out.println("\nTory: It won't stay open!");
+    System.out.println("Lance: One of us had to keep it open enough for"+
+                        " the rest of us to exit");
+    System.out.println("Tory: That's crazy who would do that!")
+    System.out.println("Gabriel: Lance is right. I can hold the door while "+
+                        "the rest of you exist.");
+    System.out println("Tory: What! no! I won't let you do that brother!");
+    System.out.println("Gabriel: No time GO!!");
+
+    enterToCont();
+    System.out.println("\nGabriel is holding the door open while the rest of " +
+    "the group is exiting through the door. You and Lance are " +
+    "the only ones left before Gabriel can let the door go.");
+
+    System.out.println("\nLance exits after and it's only you and Gabriel left.");
+    System.out.println("\nGabriel: You go first. I'll be behind you.");
+
+    enterToCont();
+    System.out.println("\nAs you are exiting the dorr Gabriel gets grab by" +
+                        " zombies. Do you save him or leave him to the horde?");
+    System.out.println("1 - Save Gabriel");
+    System.out.println("2 - Leave Gabriel");
+
+    int saveOrKillGabriel = input.nextInt();
+    if(saveOrKillGabriel < 1 || saveOrKillGabriel > 2) {
+      System.out.println("Please enter a valid option");
+      saveOrKillGabriel = input.nextInt();
+    }
+    if(saveOrKillGabriel == 1) {
+      System.out.println("\nYou go back and save Gabriel but you took a hit from" +
+                          " a zombie.");
+      health = 100 - 25;
+      displayHealth(health);
+    } else {
+      System.out.println("\nYou decide to leave Gabriel to the horde.");
+      unalive[1] = "Gabriel";
+    }
+    System.out.println("\nYou exit the hospital and run to the rest of the group");
+    System.out.println("Tory: Where's Gabriel? Where's my brother?!");
+    System.out.println("\nYou look at Tory and Lance and say nothing." +
+    " Lance just sighs and Tory starts crying.");
+    System.out.println("Tory: NOOO!!! Gabriel!!");
+    System.out.println("Lance: C'mon we gotta leave now");
+    System.out.println("\nYou and Lance hold on to Tory as you guys start heading"+
+    "back to base completing your mission.");
+    enterToCont();
+
+    System.out.println("\nMission recap: You managed to collect medical supplies " +
+                        "and escape the horde. These are the group members who died: ");
+    charDead(unalive);
+
+    enterToCont();
+
+  }// end of secondLevel
   
   public static void thirdLevel() {
     System.out.println("=============================================");
