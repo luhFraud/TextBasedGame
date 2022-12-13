@@ -6,12 +6,30 @@ public class ZombieGame {
 
   public static void main(String[] args){
 
+    if(args.length != 0 && args[0].equals("-help")) {
+      displayHelp();
+    }
+
     intro();
     firstLevel();
     secondLevel();
     thirdLevel();
-    
+
   } // end of main
+
+  public static void displayHelp() {
+    System.out.println("\n===================================================");
+    System.out.println("\nDo you need help survivng the zombie apocalypse? " +
+    "This zombie game is a narrative adventure game that will make you choose" +
+    " option that can change the storyline. This game contains three " +
+    "levels or missions with each misson containing its own mini story. " +
+    "The inputs you need for this game is keys: 1,2,3,4 and the ENTER key.");
+    System.out.println("Hope you enjoy the game and remember each choice you " +
+    "make can affect the story.");
+    System.out.println("\n===================================================");
+  }
+
+
 
   //This method will display the players health in every mission.
   public static void displayHealth(int health) {
@@ -38,10 +56,17 @@ public class ZombieGame {
   }
   public static void intro() {
 
-    System.out.println("=============================================");
+    System.out.println("\nIt's been 5 years since the beginning of the "+
+    "zombie apocalypse. You've managed to escape from the city and are now" +
+    " living in a large settlement. The scientist in the settlement " +
+    "discovered that you must be biten to turn meaning you can get hit " +
+    "or scratched and would be fine. You spend your days as a 'runner' and " +
+    "placed in different groups to go out and loot or do tasks within the " +
+    "settlement.");
+    System.out.println("\n==================================================");
     System.out.println("\nZombie text based game by: Steven Partida, Evelyn "+
                         "Martinez, & Yamilena Hernandez");
-    System.out.println("\n=============================================");
+    System.out.println("\n==================================================");
 
   }
 
@@ -115,6 +140,7 @@ public class ZombieGame {
     System.out.println("Luke: Joel you in there! It's Luke!");
     System.out.println("Joel: Luke!? Alvin let them in!");
 
+    enterToCont();
 
     System.out.println("\n5:05 pm: You and the group got into the trailer and " +
                         "found Joel's group.");
@@ -270,19 +296,25 @@ public class ZombieGame {
     "jump over the fence that separated the trailer park with the rest of " +
     "the world.");
 
+    enterToCont();
+
     System.out.println("\nMission recap: You managed to escape the trailer " +
                         "park. These are the group members who died: ");
     charDead(dead);
+    enterToCont();
 
-  } // end of firstLevel 
-  
+  } // end of firstLevel
+
   public static void secondLevel() {
+
+    String[] dead = new String[1];
+
     System.out.println("=============================================");
     System.out.println("================NEW MISSION================");
     System.out.println("=============================================");
 
     System.out.println("\nMission 2:  Uh oh! you are our of medical supplies." +
-    " You, Lance, Gabriel, and Tory are have been assigned to gather " +
+    " You, Lance, Gabriel, and Tory have been assigned to gather " +
     " gather some supplies at a near by hospital. ");
 
     enterToCont();
@@ -316,7 +348,7 @@ public class ZombieGame {
     System.out.println("\n: CRASH! ");
     System.out.println("\nGabriel: Was that you again?");
     System.out.println("You: um no.");
-    System.out.println("Gabriel: Oh no there coming! Hurry no time to grab" +
+    System.out.println("Gabriel: Oh no there coming! Hurry no time to grab " +
                         "everything choose something quick!");
 
     enterToCont();
@@ -340,22 +372,22 @@ public class ZombieGame {
       }
 
     } while (supplyChoice != 1);
-        System.out.println("\nGabriel: Alright let's move."
+        System.out.println("\nGabriel: Alright let's move.");
         System.out.println("\n: First aid collected");
 
 
     enterToCont();
 
-    System.out.println("\n: You meet up with the rest of the team, when suddenly "
+    System.out.println("\n: You meet up with the rest of the team, when suddenly " +
                         " you start hearing noises.");
-    System.out.println("\Lance: It's getting risky we should go now!");
-    System.out.println("\n Zombies are by the entrance and have now spot you"
-                        "and started heading your way"):
+    System.out.println("\nLance: It's getting risky we should go now!");
+    System.out.println("\n Zombies are by the entrance and have now spot you" +
+                        "and started heading your way");
     System.out.println("\nTory: Right behind you, but looks like where we came from"+
                         " is now blocked. Let's head this way.");
     System.out.println("\nYou and the group run down the hall and you are led to two"+
                         " different hallways.");
-    System.out.println:("\nTory: Which way do we go?")
+    System.out.println("\nTory: Which way do we go?");
 
     enterToCont();
 
@@ -387,9 +419,9 @@ public class ZombieGame {
     System.out.println("\nGabriel: Nice! Keep running! ");
 
     enterToCont();
-    
+
     System.out.println("\nYou reach the end of the hallway and you " +
-                       " are now havig to choose between 3 exits");
+                       "are now having to choose between 3 exits");
     System.out.println("Gabriel: Now which way do we go?");
     int exitSelected;
     do {
@@ -413,10 +445,10 @@ public class ZombieGame {
     System.out.println("\nTory: It won't stay open!");
     System.out.println("Lance: One of us had to keep it open enough for"+
                         " the rest of us to exit");
-    System.out.println("Tory: That's crazy who would do that!")
+    System.out.println("Tory: That's crazy who would do that!");
     System.out.println("Gabriel: Lance is right. I can hold the door while "+
-                        "the rest of you exist.");
-    System.out println("Tory: What! no! I won't let you do that brother!");
+                        "the rest of you exit.");
+    System.out.println("Tory: What! no! I won't let you do that brother!");
     System.out.println("Gabriel: No time GO!!");
 
     enterToCont();
@@ -428,7 +460,7 @@ public class ZombieGame {
     System.out.println("\nGabriel: You go first. I'll be behind you.");
 
     enterToCont();
-    System.out.println("\nAs you are exiting the dorr Gabriel gets grab by" +
+    System.out.println("\nAs you are exiting the door Gabriel gets grab by" +
                         " zombies. Do you save him or leave him to the horde?");
     System.out.println("1 - Save Gabriel");
     System.out.println("2 - Leave Gabriel");
@@ -441,30 +473,32 @@ public class ZombieGame {
     if(saveOrKillGabriel == 1) {
       System.out.println("\nYou go back and save Gabriel but you took a hit from" +
                           " a zombie.");
+      System.out.println("\nYou exit the hospital and run to the rest of the group");
       health = 100 - 25;
       displayHealth(health);
     } else {
       System.out.println("\nYou decide to leave Gabriel to the horde.");
-      unalive[1] = "Gabriel";
+      System.out.println("\nYou exit the hospital and run to the rest of the group");
+      System.out.println("Tory: Where's Gabriel? Where's my brother?!");
+      System.out.println("\nYou look at Tory and Lance and say nothing." +
+      " Lance just sighs and Tory starts crying.");
+      System.out.println("Tory: NOOO!!! Gabriel!!");
+      System.out.println("Lance: C'mon we gotta leave now");
+      System.out.println("\nYou and Lance hold on to Tory as you guys start heading"+
+      "back to base completing your mission.");
+      dead[0] = "Gabriel";
     }
-    System.out.println("\nYou exit the hospital and run to the rest of the group");
-    System.out.println("Tory: Where's Gabriel? Where's my brother?!");
-    System.out.println("\nYou look at Tory and Lance and say nothing." +
-    " Lance just sighs and Tory starts crying.");
-    System.out.println("Tory: NOOO!!! Gabriel!!");
-    System.out.println("Lance: C'mon we gotta leave now");
-    System.out.println("\nYou and Lance hold on to Tory as you guys start heading"+
-    "back to base completing your mission.");
+
     enterToCont();
 
     System.out.println("\nMission recap: You managed to collect medical supplies " +
                         "and escape the horde. These are the group members who died: ");
-    charDead(unalive);
+    charDead(dead);
 
     enterToCont();
 
   }// end of secondLevel
-  
+
   public static void thirdLevel() {
     System.out.println("=============================================");
     System.out.println("================NEW MISSION================");
@@ -572,7 +606,7 @@ public class ZombieGame {
       displayHealth(health);
 
       System.out.println("\nYour thrown on the floor, arm is bleeding" +
-      "Shock, but you see a blurry vision of a herd of zombies coming");
+      "Shock, but you see a blurry vision of a horde of zombies coming");
       System.out.println("Rick: NO! Stacy, she's gone.");
       System.out.println("Xavier: We Gotta Go!!");
       System.out.println("Shock you get up, \"I saw another door this way!\" ");
@@ -596,7 +630,7 @@ public class ZombieGame {
     enterToCont();
 
     System.out.println("You guys return home and practicality saved everyone " +
-    "from a hard winter without heat, your polar panels are soon " +
+    "from a hard winter without heat, your solar panels are soon " +
     "to start working again.");
 
     if(killThem == 1){
@@ -605,5 +639,5 @@ public class ZombieGame {
     }
 
   } // end of thirdLevel
-  
+
 } // end of class
